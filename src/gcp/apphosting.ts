@@ -133,6 +133,21 @@ export interface BuildConfig {
 interface BuildSource {
   codebase?: CodebaseSource;
   archive?: ArchiveSource;
+  locallyBuilt?: LocallyBuiltSource;
+}
+
+export interface LocallyBuiltSource {
+  userStorageUri: string;
+  rootDirectory?: string;
+  description?: string;
+  runCommand?: string;
+  runConfig?: RunConfig;
+  env?: Env[];
+}
+
+export interface RunConfig {
+  cpu?: number;
+  memoryMiB?: number;
 }
 
 interface CodebaseSource {
@@ -155,6 +170,7 @@ interface ArchiveSource {
   // end oneof reference
   rootDirectory?: string;
   author?: SourceUserMetadata;
+  /** @deprecated use Build.source.locallyBuilt instead */
   locallyBuiltSource?: boolean;
 }
 
