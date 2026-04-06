@@ -179,6 +179,11 @@ export const ALL_EXPERIMENTS = experiments({
     default: false,
     public: true,
   },
+  mcpapps: {
+    shortDescription: "Enables MCP Apps features",
+    fullDescription: "Enables MCP Apps features, including returning UI resource URIs.",
+    public: true,
+  },
   fdcift: {
     shortDescription: "Enable instrumentless trial for Data Connect",
     default: true,
